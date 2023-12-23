@@ -119,6 +119,7 @@ conversations.forEach((conv) => {
   const user = getUserById(conv.userId);
 
   convLi.addEventListener("click", () => {
+    messagesWrapper.parentNode.classList.remove('hidden')
     loadMessages(conv.id);
     activeConversationId = conv.id
   });
@@ -147,8 +148,6 @@ messageForm.addEventListener('submit', (e) => {
   e.preventDefault()
   const message = messageInput.value;
   const conversation = getConversationById(activeConversationId)
-  console.log(activeConversationId);
-  console.log(conversation);
 
   if(message) {
     conversation.messages.push({
