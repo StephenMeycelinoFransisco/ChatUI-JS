@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>Chat UI</title>
+  </head>
+  <body class="bg-[#181028] flex justify-center items-center min-h-screen">
+    <aside
+      id="chat-list"
+      class="bg-purple-900 text-white shadow-lg w-full max-w-md"
+    >
+      <form class="flex bg-purple-800 w-full relative">
+        <button
+          class="absolute top-0 left-0 h-full aspect-square flex justify-center items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-search"
+            width="42"
+            height="42"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+            <path d="M21 21l-6 -6" />
+          </svg>
+        </button>
+        <input
+          class="py-8 pl-20 pr-4 bg-transparent text-2xl text-purple-300"
+          type="text"
+        />
+        <button
+          class="bg-purple-700 aspect-square flex flex-1 justify-center items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-address-book"
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z"
+            />
+            <path d="M10 16h6" />
+            <path d="M13 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M4 8h3" />
+            <path d="M4 12h3" />
+            <path d="M4 16h3" />
+          </svg>
+        </button>
+      </form>
+      <ul id="conversations-wrapper">
+        
+      </ul>
+    </aside>
+
+    <section class="bg-slate-100 shadow-lg w-full max-w-xl">
+      <ul id="messages-wrapper">
+      </ul>
+      <form id="message-form" class="relative">
+        <input id="message-input" type="text" class="bg-white w-full p-8" placeholder="Type your message here" />
+        <button class="flex items-center justify-center absolute right-0 top-0 h-full aspect-square text-purple-700">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-send"
+            width="42"
+            height="42"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 14l11 -11" />
+            <path
+              d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"
+            />
+          </svg>
+        </button>
+      </form>
+    </section>
+  </body>
+  <script src="/index.js"></script>
+</html>
