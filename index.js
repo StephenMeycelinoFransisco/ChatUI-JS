@@ -34,7 +34,7 @@ const users = [
 
 // Get Id User
 const myUserId = 1;
-const activeConversationId = undefined;
+let activeConversationId = undefined;
 
 const conversations = [
   {
@@ -137,18 +137,24 @@ conversations.forEach((conv) => {
   coversationsWrapper.appendChild(convLi);
 });
 
+
+function getConversationById(conversationId) {
+  return conversations.find(conv => conv.id === conversationId);
+}
+
 // Event Listener
 messageForm.addEventListener('submit', (e) => {
   e.preventDefault()
-  const message = messageInput.value
-
+  const message = messageInput.value;
   const conversation = getConversationById(activeConversationId)
+  console.log(activeConversationId);
+  console.log(conversation);
 
   if(message) {
-    conversations.message.push({
+    conversation.messages.push({
       userId: myUserId,
       message,
-      time: new Date()
+      time: new Date(),
     })
 
     messageInput.value = ''
@@ -165,7 +171,7 @@ function getUserById(id) {
 function loadMessages(conversationId) {
 	messagesWrapper.innerHTML = '';
 
-  const {messages} = getConversationById(conversationId);
+  const { messages } = getConversationById(conversationId);
 
   messages.forEach(message => {
     const messLi = document.createElement("li");
@@ -190,9 +196,6 @@ function loadMessages(conversationId) {
   });
 }
 
-function getConversationById(conversationId) {
-  return conversations.find(conv => conv.id === conversationId);
-}
 
 function formateTime(date) {
   return new Intl.DateTimeFormat("en-US", { timeStyle: "short" }).format(date);
